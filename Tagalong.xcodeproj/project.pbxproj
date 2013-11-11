@@ -1,0 +1,524 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2458212B182C450600C4FA61 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2458212A182C450600C4FA61 /* Cocoa.framework */; };
+		24582135182C450600C4FA61 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 24582133182C450600C4FA61 /* InfoPlist.strings */; };
+		24582137182C450600C4FA61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 24582136182C450600C4FA61 /* main.m */; };
+		2458213B182C450600C4FA61 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 24582139182C450600C4FA61 /* Credits.rtf */; };
+		2458213E182C450600C4FA61 /* TGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2458213D182C450600C4FA61 /* TGAppDelegate.m */; };
+		24582141182C450600C4FA61 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2458213F182C450600C4FA61 /* MainMenu.xib */; };
+		24582143182C450600C4FA61 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24582142182C450600C4FA61 /* Images.xcassets */; };
+		2458214A182C450600C4FA61 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24582149182C450600C4FA61 /* XCTest.framework */; };
+		2458214B182C450600C4FA61 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2458212A182C450600C4FA61 /* Cocoa.framework */; };
+		24582153182C450600C4FA61 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 24582151182C450600C4FA61 /* InfoPlist.strings */; };
+		24582155182C450600C4FA61 /* TagalongTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 24582154182C450600C4FA61 /* TagalongTests.m */; };
+		24582166182C45B400C4FA61 /* NSURL+SOExtendedAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 2458215F182C45B400C4FA61 /* NSURL+SOExtendedAttributes.m */; };
+		24582167182C45B400C4FA61 /* SOUsefulFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 24582161182C45B400C4FA61 /* SOUsefulFunctions.m */; };
+		24582168182C45B400C4FA61 /* TagName.m in Sources */ = {isa = PBXBuildFile; fileRef = 24582163182C45B400C4FA61 /* TagName.m */; };
+		24582169182C45B400C4FA61 /* NSMetadataQuery+NSMetadataQueryBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 24582165182C45B400C4FA61 /* NSMetadataQuery+NSMetadataQueryBlock.m */; };
+		2458216C182C469900C4FA61 /* TGInstruction.m in Sources */ = {isa = PBXBuildFile; fileRef = 2458216B182C469900C4FA61 /* TGInstruction.m */; };
+		24582172182C477800C4FA61 /* TGInstructionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24582171182C477800C4FA61 /* TGInstructionController.m */; };
+		245AE781182C5E8E00250E7F /* TGInstructionApplier.m in Sources */ = {isa = PBXBuildFile; fileRef = 245AE780182C5E8E00250E7F /* TGInstructionApplier.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2458214C182C450600C4FA61 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2458211F182C450600C4FA61 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24582126182C450600C4FA61;
+			remoteInfo = Tagalong;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		24582127182C450600C4FA61 /* Tagalong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tagalong.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2458212A182C450600C4FA61 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		2458212D182C450600C4FA61 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		2458212E182C450600C4FA61 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		2458212F182C450600C4FA61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		24582132182C450600C4FA61 /* Tagalong-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tagalong-Info.plist"; sourceTree = "<group>"; };
+		24582134182C450600C4FA61 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		24582136182C450600C4FA61 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		24582138182C450600C4FA61 /* Tagalong-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tagalong-Prefix.pch"; sourceTree = "<group>"; };
+		2458213A182C450600C4FA61 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		2458213C182C450600C4FA61 /* TGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TGAppDelegate.h; sourceTree = "<group>"; };
+		2458213D182C450600C4FA61 /* TGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TGAppDelegate.m; sourceTree = "<group>"; };
+		24582140182C450600C4FA61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		24582142182C450600C4FA61 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		24582148182C450600C4FA61 /* TagalongTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TagalongTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		24582149182C450600C4FA61 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		24582150182C450600C4FA61 /* TagalongTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TagalongTests-Info.plist"; sourceTree = "<group>"; };
+		24582152182C450600C4FA61 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		24582154182C450600C4FA61 /* TagalongTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagalongTests.m; sourceTree = "<group>"; };
+		2458215E182C45B400C4FA61 /* NSURL+SOExtendedAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+SOExtendedAttributes.h"; sourceTree = "<group>"; };
+		2458215F182C45B400C4FA61 /* NSURL+SOExtendedAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+SOExtendedAttributes.m"; sourceTree = "<group>"; };
+		24582160182C45B400C4FA61 /* SOUsefulFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOUsefulFunctions.h; sourceTree = "<group>"; };
+		24582161182C45B400C4FA61 /* SOUsefulFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOUsefulFunctions.m; sourceTree = "<group>"; };
+		24582162182C45B400C4FA61 /* TagName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagName.h; sourceTree = "<group>"; };
+		24582163182C45B400C4FA61 /* TagName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagName.m; sourceTree = "<group>"; };
+		24582164182C45B400C4FA61 /* NSMetadataQuery+NSMetadataQueryBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMetadataQuery+NSMetadataQueryBlock.h"; sourceTree = "<group>"; };
+		24582165182C45B400C4FA61 /* NSMetadataQuery+NSMetadataQueryBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMetadataQuery+NSMetadataQueryBlock.m"; sourceTree = "<group>"; };
+		2458216A182C469800C4FA61 /* TGInstruction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGInstruction.h; sourceTree = "<group>"; };
+		2458216B182C469900C4FA61 /* TGInstruction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGInstruction.m; sourceTree = "<group>"; };
+		24582170182C477800C4FA61 /* TGInstructionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGInstructionController.h; sourceTree = "<group>"; };
+		24582171182C477800C4FA61 /* TGInstructionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGInstructionController.m; sourceTree = "<group>"; };
+		245AE77F182C5E8E00250E7F /* TGInstructionApplier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGInstructionApplier.h; sourceTree = "<group>"; };
+		245AE780182C5E8E00250E7F /* TGInstructionApplier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGInstructionApplier.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		24582124182C450600C4FA61 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2458212B182C450600C4FA61 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24582145182C450600C4FA61 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2458214B182C450600C4FA61 /* Cocoa.framework in Frameworks */,
+				2458214A182C450600C4FA61 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2458211E182C450600C4FA61 = {
+			isa = PBXGroup;
+			children = (
+				24582130182C450600C4FA61 /* Tagalong */,
+				2458214E182C450600C4FA61 /* TagalongTests */,
+				24582129182C450600C4FA61 /* Frameworks */,
+				24582128182C450600C4FA61 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		24582128182C450600C4FA61 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				24582127182C450600C4FA61 /* Tagalong.app */,
+				24582148182C450600C4FA61 /* TagalongTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		24582129182C450600C4FA61 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2458212A182C450600C4FA61 /* Cocoa.framework */,
+				24582149182C450600C4FA61 /* XCTest.framework */,
+				2458212C182C450600C4FA61 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2458212C182C450600C4FA61 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2458212D182C450600C4FA61 /* AppKit.framework */,
+				2458212E182C450600C4FA61 /* CoreData.framework */,
+				2458212F182C450600C4FA61 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		24582130182C450600C4FA61 /* Tagalong */ = {
+			isa = PBXGroup;
+			children = (
+				2458213C182C450600C4FA61 /* TGAppDelegate.h */,
+				2458213D182C450600C4FA61 /* TGAppDelegate.m */,
+				2458215E182C45B400C4FA61 /* NSURL+SOExtendedAttributes.h */,
+				2458215F182C45B400C4FA61 /* NSURL+SOExtendedAttributes.m */,
+				24582160182C45B400C4FA61 /* SOUsefulFunctions.h */,
+				24582161182C45B400C4FA61 /* SOUsefulFunctions.m */,
+				24582162182C45B400C4FA61 /* TagName.h */,
+				24582163182C45B400C4FA61 /* TagName.m */,
+				24582164182C45B400C4FA61 /* NSMetadataQuery+NSMetadataQueryBlock.h */,
+				24582165182C45B400C4FA61 /* NSMetadataQuery+NSMetadataQueryBlock.m */,
+				2458213F182C450600C4FA61 /* MainMenu.xib */,
+				24582142182C450600C4FA61 /* Images.xcassets */,
+				24582131182C450600C4FA61 /* Supporting Files */,
+				2458216A182C469800C4FA61 /* TGInstruction.h */,
+				2458216B182C469900C4FA61 /* TGInstruction.m */,
+				24582170182C477800C4FA61 /* TGInstructionController.h */,
+				24582171182C477800C4FA61 /* TGInstructionController.m */,
+				245AE77F182C5E8E00250E7F /* TGInstructionApplier.h */,
+				245AE780182C5E8E00250E7F /* TGInstructionApplier.m */,
+			);
+			path = Tagalong;
+			sourceTree = "<group>";
+		};
+		24582131182C450600C4FA61 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				24582132182C450600C4FA61 /* Tagalong-Info.plist */,
+				24582133182C450600C4FA61 /* InfoPlist.strings */,
+				24582136182C450600C4FA61 /* main.m */,
+				24582138182C450600C4FA61 /* Tagalong-Prefix.pch */,
+				24582139182C450600C4FA61 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2458214E182C450600C4FA61 /* TagalongTests */ = {
+			isa = PBXGroup;
+			children = (
+				24582154182C450600C4FA61 /* TagalongTests.m */,
+				2458214F182C450600C4FA61 /* Supporting Files */,
+			);
+			path = TagalongTests;
+			sourceTree = "<group>";
+		};
+		2458214F182C450600C4FA61 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				24582150182C450600C4FA61 /* TagalongTests-Info.plist */,
+				24582151182C450600C4FA61 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		24582126182C450600C4FA61 /* Tagalong */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24582158182C450600C4FA61 /* Build configuration list for PBXNativeTarget "Tagalong" */;
+			buildPhases = (
+				24582123182C450600C4FA61 /* Sources */,
+				24582124182C450600C4FA61 /* Frameworks */,
+				24582125182C450600C4FA61 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tagalong;
+			productName = Tagalong;
+			productReference = 24582127182C450600C4FA61 /* Tagalong.app */;
+			productType = "com.apple.product-type.application";
+		};
+		24582147182C450600C4FA61 /* TagalongTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2458215B182C450600C4FA61 /* Build configuration list for PBXNativeTarget "TagalongTests" */;
+			buildPhases = (
+				24582144182C450600C4FA61 /* Sources */,
+				24582145182C450600C4FA61 /* Frameworks */,
+				24582146182C450600C4FA61 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2458214D182C450600C4FA61 /* PBXTargetDependency */,
+			);
+			name = TagalongTests;
+			productName = TagalongTests;
+			productReference = 24582148182C450600C4FA61 /* TagalongTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2458211F182C450600C4FA61 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TG;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = Jesper;
+				TargetAttributes = {
+					24582147182C450600C4FA61 = {
+						TestTargetID = 24582126182C450600C4FA61;
+					};
+				};
+			};
+			buildConfigurationList = 24582122182C450600C4FA61 /* Build configuration list for PBXProject "Tagalong" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2458211E182C450600C4FA61;
+			productRefGroup = 24582128182C450600C4FA61 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				24582126182C450600C4FA61 /* Tagalong */,
+				24582147182C450600C4FA61 /* TagalongTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		24582125182C450600C4FA61 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24582135182C450600C4FA61 /* InfoPlist.strings in Resources */,
+				24582143182C450600C4FA61 /* Images.xcassets in Resources */,
+				2458213B182C450600C4FA61 /* Credits.rtf in Resources */,
+				24582141182C450600C4FA61 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24582146182C450600C4FA61 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24582153182C450600C4FA61 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		24582123182C450600C4FA61 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2458216C182C469900C4FA61 /* TGInstruction.m in Sources */,
+				24582166182C45B400C4FA61 /* NSURL+SOExtendedAttributes.m in Sources */,
+				245AE781182C5E8E00250E7F /* TGInstructionApplier.m in Sources */,
+				24582169182C45B400C4FA61 /* NSMetadataQuery+NSMetadataQueryBlock.m in Sources */,
+				24582167182C45B400C4FA61 /* SOUsefulFunctions.m in Sources */,
+				24582172182C477800C4FA61 /* TGInstructionController.m in Sources */,
+				24582137182C450600C4FA61 /* main.m in Sources */,
+				24582168182C45B400C4FA61 /* TagName.m in Sources */,
+				2458213E182C450600C4FA61 /* TGAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24582144182C450600C4FA61 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24582155182C450600C4FA61 /* TagalongTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2458214D182C450600C4FA61 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 24582126182C450600C4FA61 /* Tagalong */;
+			targetProxy = 2458214C182C450600C4FA61 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		24582133182C450600C4FA61 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24582134182C450600C4FA61 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		24582139182C450600C4FA61 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2458213A182C450600C4FA61 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		2458213F182C450600C4FA61 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24582140182C450600C4FA61 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		24582151182C450600C4FA61 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24582152182C450600C4FA61 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		24582156182C450600C4FA61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		24582157182C450600C4FA61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		24582159182C450600C4FA61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tagalong/Tagalong-Prefix.pch";
+				INFOPLIST_FILE = "Tagalong/Tagalong-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2458215A182C450600C4FA61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tagalong/Tagalong-Prefix.pch";
+				INFOPLIST_FILE = "Tagalong/Tagalong-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		2458215C182C450600C4FA61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Tagalong.app/Contents/MacOS/Tagalong";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tagalong/Tagalong-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "TagalongTests/TagalongTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		2458215D182C450600C4FA61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Tagalong.app/Contents/MacOS/Tagalong";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tagalong/Tagalong-Prefix.pch";
+				INFOPLIST_FILE = "TagalongTests/TagalongTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		24582122182C450600C4FA61 /* Build configuration list for PBXProject "Tagalong" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24582156182C450600C4FA61 /* Debug */,
+				24582157182C450600C4FA61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24582158182C450600C4FA61 /* Build configuration list for PBXNativeTarget "Tagalong" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24582159182C450600C4FA61 /* Debug */,
+				2458215A182C450600C4FA61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2458215B182C450600C4FA61 /* Build configuration list for PBXNativeTarget "TagalongTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2458215C182C450600C4FA61 /* Debug */,
+				2458215D182C450600C4FA61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2458211F182C450600C4FA61 /* Project object */;
+}
