@@ -55,20 +55,23 @@ static NSMutableSet *queries = nil;
 }
 
 - (void)didFinishGatheringOrUpdating:(NSNotification *)n {
-    NSLog(@"stopping updates");
-    [self.query disableUpdates];
-    NSArray *results = [self.query results];
-    BOOL shouldStop = NO;
-    self.handler(results, &shouldStop);
-    if (shouldStop) {
-        [self.query stopQuery];
-        [[NSNotificationCenter defaultCenter] removeObserver:self name:NSMetadataQueryDidFinishGatheringNotification object:self.query];
-        [[NSNotificationCenter defaultCenter] removeObserver:self name:NSMetadataQueryDidUpdateNotification object:self.query];
-        self.cancellationHandler();
-    } else {
-        NSLog(@"enabling updates");
-        [self.query enableUpdates];
-    }
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        NSLog(@"stopping updates");
+        [self.query disableUpdates];
+        NSArray *results = [self.query results];
+        BOOL shouldStop = NO;
+        self.handler(results, &shouldStop);
+        if (shouldStop) {
+            [self.query stopQuery];
+            [[NSNotificationCenter defaultCenter] removeObserver:self name:NSMetadataQueryDidFinishGatheringNotification object:self.query];
+            [[NSNotificationCenter defaultCenter] removeObserver:self name:NSMetadataQueryDidUpdateNotification object:self.query];
+            self.cancellationHandler();
+        } else {
+            NSLog(@"enabling updates");
+            [self.query enableUpdates];
+            NSLog(@"done enabling updates");
+        }
+    });
 }
 
 @end

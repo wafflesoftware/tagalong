@@ -29,11 +29,16 @@ static void * const TGInstructionControllerKVOContext = (void*)&TGInstructionCon
     _appliers = [NSMutableDictionary dictionary];
     [instructions enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         if (![key isKindOfClass:[NSString class]]) return;
-        if (![obj isKindOfClass:[NSString class]]) return;
+        if (![obj isKindOfClass:[NSDictionary class]]) return;
+        
+        NSDictionary *info = (NSDictionary *)obj;
+        NSString *pathToHandler = info[@"path"];
+        NSString *extName = info[@"ext"];
         
         TGInstruction *instruction = [[TGInstruction alloc] init];
         instruction.tagName = (NSString *)key;
-        instruction.urlToHandlerScript = [NSURL fileURLWithPath:(NSString *)obj];
+        instruction.urlToHandlerScript = [NSURL fileURLWithPath:pathToHandler];
+        instruction.extName = extName;
         [self startTracking:instruction];
         [instructionsArray addObject:instruction];
     }];
@@ -48,7 +53,7 @@ static void * const TGInstructionControllerKVOContext = (void*)&TGInstructionCon
     NSMutableDictionary *d = [NSMutableDictionary dictionary];
     for (TGInstruction *inst in instructions) {
         if (![self instructionIsValid:inst]) continue;
-        d[inst.tagName] = inst.urlToHandlerScript.path;
+        d[inst.tagName] = @{@"path": inst.urlToHandlerScript.path, @"ext": inst.extName};
     }
     
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
@@ -58,7 +63,8 @@ static void * const TGInstructionControllerKVOContext = (void*)&TGInstructionCon
 - (BOOL)instructionIsValid:(TGInstruction *)instr {
     id tagName = instr.tagName;
     id urlToHandlerScript = instr.urlToHandlerScript;
-    BOOL isValid = ([instr validateValue:&tagName forKey:@"tagName" error:NULL] && [instr validateValue:&urlToHandlerScript forKey:@"urlToHandlerScript" error:NULL]);
+    id extName = instr.extName;
+    BOOL isValid = ([instr validateValue:&tagName forKey:@"tagName" error:NULL] && [instr validateValue:&urlToHandlerScript forKey:@"urlToHandlerScript" error:NULL] && [instr validateValue:&extName forKey:@"extName" error:NULL]);
     return isValid;
 }
 
@@ -71,6 +77,7 @@ static void * const TGInstructionControllerKVOContext = (void*)&TGInstructionCon
     }
     [instr addObserver:self forKeyPath:@"tagName" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:TGInstructionControllerKVOContext];
     [instr addObserver:self forKeyPath:@"urlToHandlerScript" options:NSKeyValueObservingOptionNew context:TGInstructionControllerKVOContext];
+    [instr addObserver:self forKeyPath:@"extName" options:NSKeyValueObservingOptionNew context:TGInstructionControllerKVOContext];
     if ([self instructionIsValid:instr]) {
         [applier update];
     }
@@ -102,6 +109,7 @@ static void * const TGInstructionControllerKVOContext = (void*)&TGInstructionCon
 
     [instr removeObserver:self forKeyPath:@"tagName" context:TGInstructionControllerKVOContext];
     [instr removeObserver:self forKeyPath:@"urlToHandlerScript" context:TGInstructionControllerKVOContext];
+    [instr removeObserver:self forKeyPath:@"extName" context:TGInstructionControllerKVOContext];
 }
 
 @dynamic instructions;

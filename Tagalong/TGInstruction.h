@@ -10,6 +10,7 @@
 
 @interface TGInstruction : NSObject
 @property NSString *tagName;
+@property NSString *extName;
 @property NSURL *urlToHandlerScript;
 @property (readonly) NSUUID *uniqueID;
 @end

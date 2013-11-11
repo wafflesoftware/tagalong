@@ -25,7 +25,8 @@
 
 #define INSTRUCTION_ERROR_DOMAIN    @"net.wafflesoftware.Tagalong.TGInstruction"
 #define TAGNAME_INVALID_CODE    100
-#define SCRIPTURL_INVALID_CODE    100
+#define EXTNAME_INVALID_CODE    110
+#define SCRIPTURL_INVALID_CODE    120
 
 -(BOOL)validateTagName:(id *)ioValue error:(NSError * __autoreleasing *)outError{
     if ((*ioValue == nil) || ![*ioValue isKindOfClass:[NSString class]] || (![(NSString *)*ioValue hasPrefix:@"@"])) {
@@ -34,6 +35,20 @@
             NSDictionary *userInfoDict = @{ NSLocalizedDescriptionKey : errorString };
             *outError = [[NSError alloc] initWithDomain:INSTRUCTION_ERROR_DOMAIN
                                                    code:TAGNAME_INVALID_CODE
+                                               userInfo:userInfoDict];
+        }
+        return NO;
+    }
+    return YES;
+}
+
+-(BOOL)validateExtName:(id *)ioValue error:(NSError * __autoreleasing *)outError{
+    if ((*ioValue == nil) || ![*ioValue isKindOfClass:[NSString class]] || (![(NSString *)*ioValue hasPrefix:@"."])) {
+        if (outError != NULL) {
+            NSString *errorString = @"The extension must start with '.'.";
+            NSDictionary *userInfoDict = @{ NSLocalizedDescriptionKey : errorString };
+            *outError = [[NSError alloc] initWithDomain:INSTRUCTION_ERROR_DOMAIN
+                                                   code:EXTNAME_INVALID_CODE
                                                userInfo:userInfoDict];
         }
         return NO;

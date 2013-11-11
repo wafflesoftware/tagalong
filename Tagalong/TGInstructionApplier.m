@@ -140,8 +140,8 @@ NSString* const kMDItemUserTags = @"kMDItemUserTags";
 //        return;
 //}
 
-- (NSString *)extensionForTag:(NSString *)tag {
-    NSMutableString *cleaning = [tag mutableCopy];
+- (NSString *)cleanStringForExtension:(NSString *)s {
+    NSMutableString *cleaning = [s mutableCopy];
     static NSCharacterSet *clean = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -157,6 +157,27 @@ NSString* const kMDItemUserTags = @"kMDItemUserTags";
         }
     } while (r.location != NSNotFound);
     return cleaning;
+}
+
+- (NSString *)extensionForInstruction:(TGInstruction *)instruction {
+    NSString *extName = instruction.extName;
+    if (extName != nil) {
+        NSString *cleanedExtName = [self cleanStringForExtension:extName];
+        if ([cleanedExtName length] > 0) return extName;
+    }
+    NSString *cleanedTagName = [self cleanStringForExtension:instruction.tagName];
+    if ([cleanedTagName length] > 0) return cleanedTagName;
+    
+    return nil;
+}
+
+- (void)debugNotify:(NSString *)notificationTitle message:(NSString *)message {
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"DebugNotifications"]) return;
+    
+    NSUserNotification *not = [[NSUserNotification alloc] init];
+    [not setTitle:notificationTitle];
+    [not setSubtitle:message];
+    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:not];
 }
 
 - (void)performActionForTag:(TagName *)tagName filePath:(NSString *)filePath {
@@ -179,12 +200,14 @@ NSString* const kMDItemUserTags = @"kMDItemUserTags";
         }
     }
     
-    NSString *ext = [self extensionForTag:[[tagName visibleName] lowercaseString]];
+    [self debugNotify:@"Change detected" message:filePath];
+    
+    NSString *ext = [self extensionForInstruction:self.instruction];
     if ([ext length] == 0) {
         ext = @"processed";
     }
     
-    NSString *tempResultFile = [filePath stringByAppendingPathExtension:ext];
+    NSString *tempResultFile = [filePath stringByAppendingString:ext];
     [@"" writeToFile:tempResultFile atomically:NO encoding:NSUTF8StringEncoding error:NULL];
     NSFileHandle *writingTempResultFile = [NSFileHandle fileHandleForWritingAtPath:tempResultFile];
     
@@ -199,6 +222,9 @@ NSString* const kMDItemUserTags = @"kMDItemUserTags";
     [writingTempResultFile closeFile];
     
     [u setExtendedAttributeValue:thisChange forName:extAttributeLastChangeName error:NULL];
+    
+    [self debugNotify:@"Updated sidecar file" message:tempResultFile];
+    
     /*}
      @catch (NSException *exception) {
      
